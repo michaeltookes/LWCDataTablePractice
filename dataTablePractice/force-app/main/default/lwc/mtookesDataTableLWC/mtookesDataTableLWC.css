@@ -1,0 +1,15 @@
+.slds-card_footer {
+    height: 40px;
+}
+
+.SubmitButton {
+    float: right;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+
+.addNewButton {
+    float: left;
+    padding-left: 15px;
+    padding-top: 10px;
+}

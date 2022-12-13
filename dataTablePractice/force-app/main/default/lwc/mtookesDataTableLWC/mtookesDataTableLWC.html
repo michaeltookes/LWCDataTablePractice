@@ -1,0 +1,91 @@
+<template>
+    <lightning-card title="StudentRoster" icon-name="custom:custom14">
+        <div class="myDataTable">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="#">#</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="FirstName">First Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="MiddleName">Middle Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="LastName">Last Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="SocialSecurityNumber">Social Security Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="CompanyName">Company Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="RRCLicenseNumber">RRC License Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={inputField} for:item="inputField" for:index="index">
+                        <tr key={inputField.Id} id={inputField.Id}>
+                            <td>{index}</td>
+                            <!--First Name-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--Middle Name-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--Last Name-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--Social Security Number-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--Company Name-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--RRC License Number-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                            <!--Email-->
+                            <td>
+                                <lightning-input type="text"></lightning-input>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody> 
+            </table>
+            <footer class="slds-card_footer">
+                <div class="actionBar">
+                    <div class="SubmitButton">
+                        <div>
+                            <button class="slds-button slds-button_brand">Submit</button>
+                        </div>
+                    </div>
+                    <div class="addNewButton">
+                    <lightning-button-icon
+                        icon-name="action:new"
+                        size="medium"
+                        access-key={inputField.Id}
+                        id={index}
+                        title="Add Row"
+                        onclick={addRow}
+                    >
+                    </lightning-button-icon>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </lightning-card>
+</template>
