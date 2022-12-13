@@ -9,11 +9,9 @@ export default class MtookesDataTableLWC extends LightningElement {
     ];
     
     addRow() {
-        this.index++;
-
-        this.inputField.push ({
-            inputField
-        })
+        ++this.keyIndex;
+        var newRow = [{id: this.keyIndex}];
+        this.inputField = this.inputField.concat(newRow);
     }
 
 }
