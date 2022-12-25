@@ -1,4 +1,5 @@
 import { LightningElement, api, track} from 'lwc';
+import { loadStyle } from 'lightning/platformResourceLoader';
 
 export default class MtookesDataTableLWC extends LightningElement {
     keyIndex = 0;
@@ -12,6 +13,14 @@ export default class MtookesDataTableLWC extends LightningElement {
         ++this.keyIndex;
         var newRow = [{id: this.keyIndex}];
         this.inputField = this.inputField.concat(newRow);
+    }
+
+    closeAction() {
+        this.dispatchEvent(new CloseActionScreenEvent());
+    }
+
+    connectedCallback() {
+        loadStyle(this.modal)
     }
 
 }
