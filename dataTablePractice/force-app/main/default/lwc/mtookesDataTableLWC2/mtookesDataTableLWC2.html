@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Student Roster" icon-name="custom:custom14" class="myCard" style="height: 1000px">
+        <template for:each={itemList} for:item="item" for:index="index">
+            <lightning-record-edit-form key={item.Id} object-api-name="Student_Roster__c">
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="First_Name__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="Middle_Name__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                   <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="Last_Name__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="Social_Security_Number__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="Company_Name__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" small-device-size="12" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="RRC_License_Number__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" small-device-size="6" medium-device-size="4" large-device-size="2" padding="around-small">
+                        <lightning-input-field field-name="Email__c" variant="stacked"></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-record-edit-form>
+        </template>
+        <div slot="footer">
+            <div class="FooterActions slds-clearfix">
+                <div class="addNewButton">
+                    <lightning-button-icon
+                        class="slds-float_left"
+                        icon-name="action:new"
+                        size="medium"
+                        title="Add Row"
+                        onclick={addRow}
+                    >
+                    </lightning-button-icon>
+                </div>
+                <button class="slds-button slds-button_brand slds-float_right">Submit</button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
